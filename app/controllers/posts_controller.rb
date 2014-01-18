@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   #Need to add a create method to the controller
 
   def create
-    @post = Post.new(params[:post])
+    @post = current_user.posts.build(params[:post])
     if @post.save
       flash[:notice] = "Post was saved."
       redirect_to @post
