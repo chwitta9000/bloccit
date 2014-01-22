@@ -11,6 +11,10 @@ class PostsController < ApplicationController
     authorize! :create, Post, message: "You need to be a member to create a new post."
   end
 
+  def newest
+    @posts = Post.limit(25).all
+  end
+
   #Need to add a create method to the controller
 
   def create
