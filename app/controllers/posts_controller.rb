@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def newest
-    @posts = Post.limit(25).all
+    @posts = Post.paginate(page: params[:page], per_page: 10)
   end
 
   #Need to add a create method to the controller
