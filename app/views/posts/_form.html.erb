@@ -23,7 +23,7 @@
   <% end %>
   <div class="control-group">
     <%= image_tag(post.postpic.thumb.url) if post.postpic? %>
-    <%= f.label :postpic, class: 'control-label' %>
+    <%= f.label "Image", class: 'control-label' %>
     <div class="controls">
       <%= f.file_field :postpic %>
     </div>
