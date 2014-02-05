@@ -23,7 +23,7 @@
         <div class="media-body">
           <h4 class="media-heading">
             <%= render partial: 'votes/voter', locals: {topic: @topic, post: post} %>
-<!--             <%= image_tag(post.postpic.thumb.url) if post.postpic? %> 
+<!--             <%= #image_tag(post.postpic.thumb.url) if post.postpic? %> 
  -->            <%= link_to (markdown post.title), [@topic, post] %>
           </h4>
           <small>
