@@ -8,10 +8,13 @@
       <% topic = post.topic %>
       <div class="media">
         <div class="media-body">
+          <% if topic %>
+          <% end %>
           <h4 class="media-heading">
             <% if topic %>
-            <%= image_tag(post.user.avatar.tiny.url) if post.user.avatar? %>
-            <%= link_to (markdown post.title), topic_post_path(topic, post)%>
+              <%= render partial: 'votes/voter', locals: {topic: topic, post: post} %>
+<!--               <%= image_tag(post.user.avatar.tiny.url) if post.user.avatar? %>
+ -->              <%= link_to (markdown post.title), topic_post_path(topic, post)%>
             <% end %>
           </h4>
           <small>
