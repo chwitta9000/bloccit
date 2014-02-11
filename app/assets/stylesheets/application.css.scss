@@ -1,3 +1,4 @@
+@import "bootstrap-custom";
 @import "bootstrap";
 
 .user-info {
@@ -16,8 +17,8 @@
   line-height: 30px;
   text-align: center;
   vertical-align: middle;
-  color: inherit;
-  background-color: #eeeeee;
+  color: #000000;
+  background-color: #D0D788;
 }
 
 .vote-arrows {
@@ -25,3 +26,6 @@
   text-align: center;
 }
 
+.voted {
+  opacity: 0.5;
+}
