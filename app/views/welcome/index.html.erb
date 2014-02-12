@@ -1,9 +1,15 @@
 <div class="hero-unit">
   <h1>Aporia</h1>
   <p>Aporia is a resource for sharing links with your friends!</p>
+  <% if !current_user %>
     <p>
       <%= link_to "Sign Up Today!", new_user_registration_path, class: 'btn btn-success btn-large' %>
     </p>
+  <% else %>
+    <p>
+      <%= link_to "Go To Your Profile!", current_user, class: 'btn btn-large' %>
+    </p>
+  <% end %>
 </div>
 
 <div class="row">
