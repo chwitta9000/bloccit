@@ -2,13 +2,13 @@ require 'faker'
 
 # Create 15 topics first
 topics = []
-15.times do
+2.times do
   topics << Topic.create(
     name: Faker::Lorem.words(rand(3..10)).join(" "),
     description: Faker::Lorem.paragraph(rand(1..4)))
 end
 
-rand(4..10).times do
+rand(1..2).times do
   password = Faker::Lorem.characters(10)
   u = User.new(
     name: Faker::Name.name,
@@ -21,7 +21,7 @@ rand(4..10).times do
 # Note that we use User.new and then u.save instead of User.create
 # This allows us to use skip_confirmation!
 
-  rand(5..12).times do
+  rand(1..2).times do
     topic = topics.first
     p = u.posts.create(
       topic: topic,
@@ -63,7 +63,7 @@ u.update_attribute(:role, 'member')
 
 post_count = Post.count
 User.all.each do |user|
-  rand(30..50).times do
+  rand(1..5).times do
     p = Post.find(rand(1..post_count))
     c = user.comments.create(
       body: Faker::Lorem.paragraphs(rand(1..2)).join("\n"),
