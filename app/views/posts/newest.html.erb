@@ -4,17 +4,12 @@
 
 <div class="row">
   <div class="span8">
-    <% @posts.each do |post| %>
-      <% topic = post.topic %>
+    <% posts_with_topics(@posts).each do |post| %>
       <div class="media">
         <div class="media-body">
-          <% if topic %>
-          <% end %>
           <h4 class="media-heading">
-            <% if topic %>
-              <%= render partial: 'votes/voter', locals: {topic: topic, post: post} %>
-              <%= link_to (markdown post.title), topic_post_path(topic, post)%>
-            <% end %>
+              <%= render partial: 'votes/voter', locals: {topic: post.topic, post: post} %>
+              <%= link_to (markdown post.title), topic_post_path(post.topic, post)%>
           </h4>
           <small>
             submitted <%= time_ago_in_words(post.created_at) %> ago by

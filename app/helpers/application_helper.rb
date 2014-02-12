@@ -29,4 +29,8 @@ module ApplicationHelper
     topic = post.topic
     [topic, post, comment]
   end
+
+  def posts_with_topics(posts)
+    posts.map {|p| p unless p.topic.nil?}
+  end
 end
