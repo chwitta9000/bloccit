@@ -16,10 +16,6 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $(".hero-unit").slideUp(1200);
-});
-
-$(document).ready(function() {
   $(".js-show-hide").click(function() {
     var selector = "." + $(this).attr('data-selector');
     if ($(selector).is(":visible")) {
