@@ -27,3 +27,18 @@ $(document).ready(function() {
     return false;
   });
 });
+
+$(document).ready(
+  function(){
+    $(".blocmetrics").click(
+      function(event){
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:4567/tracking-hit",
+          data: {
+            parameter_1: "Blocmetrics is awesome!",
+            parameter_2: "Hello everyone!"
+        }    
+        });
+      });
+});
