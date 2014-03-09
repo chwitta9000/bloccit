@@ -33,11 +33,13 @@ $(document).ready(
     $(".blocmetrics").click(
       function(event){
         $.ajax({
-            type: "POST",
             url: "http://localhost:4567/tracking-hit",
+            jsonp: "callback",
+            datatype: "jsonp",
           data: {
             parameter_1: "Blocmetrics is awesome!",
-            parameter_2: "Hello everyone!"
+            parameter_2: "Hello everyone!",
+            format: "json"
         }    
         });
       });
